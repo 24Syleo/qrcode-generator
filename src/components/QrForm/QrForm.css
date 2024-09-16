@@ -1,0 +1,15 @@
+.qrForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.btn {
+    margin-top: 15px;
+}
+
+.notActive {
+    background-color: var(--gray-dark);
+    text-decoration: line-through;
+}

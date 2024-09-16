@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --blue-steel: #4682B4;  /* Bleu acier */
+  --gray-light: #D3D3D3;  /* Gris clair */
+  --gray-medium: #A9A9A9; /* Gris moyen */
+  --gray-anthracite: #2F4F4F;  /* Gris anthracite */
+  --gray-slate: #708090;  /* Gris ardoise */
+  --gray-dark: #696969;  /* Gris foncé */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  line-height: 1;
+  background-color: var(--gray-light); /* Tu peux ajuster la couleur de fond */
+  color: var(--gray-anthracite); /* Couleur de texte par défaut */
+}
+
+button {
+  all: unset; /* Supprimer les styles par défaut du bouton */
+  cursor: pointer; /* Ajouter un curseur pointer pour les boutons */
+  padding: 0.5rem 1rem; /* Exemples de padding */
+  background-color: var(--blue-steel); /* Couleur de fond du bouton */
+  color: var(--gray-light); /* Couleur du texte du bouton */
+  border-radius: 5px; /* Ajouter un léger arrondi */
+  font-size: 1rem;
+  transition: background-color 0.3s ease; /* Transition fluide au survol */
+}
+
+button:hover {
+  background-color: var(--gray-anthracite); /* Changer la couleur au survol */
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
