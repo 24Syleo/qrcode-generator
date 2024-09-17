@@ -6,7 +6,9 @@ const QrForm = () => {
 
     const [formData, setFormData] = useState({
         url: "",
-        fgColor: "#000000",  // Couleur par défaut
+        bgColor: "#ffffff",
+        fgColor: "#000000",
+        size: "128",
     });
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -14,13 +16,45 @@ const QrForm = () => {
 
     const handleUrl = (evt) => {
         setFormData(
-            { url: evt.target.value, fgColor: formData.fgColor }
+            { 
+                url: evt.target.value,
+                bgColor: formData.bgColor,
+                fgColor: formData.fgColor, 
+                size: formData.size,
+            }
+        )
+    };
+
+    const handleBgColor = (evt) => {
+        setFormData(
+            { 
+                url: formData.url,
+                bgColor: evt.target.value,
+                fgColor: formData.fgColor,
+                size: formData.size,
+            }
         )
     };
 
     const handleFgColor = (evt) => {
         setFormData(
-            { url: formData.url, fgColor: evt.target.value }
+            { 
+                url: formData.url,
+                bgColor: formData.bgColor,
+                fgColor: evt.target.value,
+                size: formData.size,
+            }
+        )
+    };
+
+    const handleSize = (evt) => {
+        setFormData(
+            { 
+                url: formData.url,
+                bgColor: formData.bgColor,
+                fgColor: formData.fgColor,
+                size: evt.target.value,
+            }
         )
     };
 
@@ -61,12 +95,25 @@ const QrForm = () => {
             />
             <InputField
                 type="color"
+                value={formData.bgColor}
+                onChange={handleBgColor}
+                placeholder="Choisir la couleur"
+                name="bgColor"
+            />
+            <InputField
+                type="color"
                 value={formData.fgColor}
                 onChange={handleFgColor}
                 placeholder="Choisir la couleur"
                 name="fgColor"
             />
-            <QrCode url={formData.url} fgColor={formData.fgColor} />
+            <InputField
+                type="number"
+                value={formData.size}
+                onChange={handleSize}
+                name="size"
+            />
+            <QrCode url={formData.url} bgColor={formData.bgColor} fgColor={formData.fgColor} size={formData.size}/>
             <button type="submit" disabled={isButtonDisabled} className={`btn ${isButtonDisabled ? 'notActive' : ''}`}>Télécharger</button>
         </form>
     );
